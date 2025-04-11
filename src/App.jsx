@@ -26,9 +26,29 @@ export default function App() {
   return (
     <div style={{ maxWidth: 600, margin: '2rem auto', fontFamily: 'sans-serif' }}>
       <h2>📝 결정 회고 메모</h2>
-      <input placeholder='🧠 어떤 결정을 했나요?' value={input.decision} onChange={(e) => setInput({...input, decision: e.target.value})} /><br/>
-      <input placeholder='❓ 왜 그렇게 했나요?' value={input.reason} onChange={(e) => setInput({...input, reason: e.target.value})} /><br/>
-      <input placeholder='🔁 다음엔 어떻게 할까요?' value={input.reflection} onChange={(e) => setInput({...input, reflection: e.target.value})} /><br/>
+     <textarea
+  placeholder="🧠 어떤 결정을 했나요?"
+  rows="3"
+  style={{ width: '100%', resize: 'vertical' }}
+  value={input.decision}
+  onChange={(e) => setInput({ ...input, decision: e.target.value })}
+/>
+
+<textarea
+  placeholder="❓ 왜 그렇게 했나요?"
+  rows="3"
+  style={{ width: '100%', resize: 'vertical' }}
+  value={input.reason}
+  onChange={(e) => setInput({ ...input, reason: e.target.value })}
+/>
+
+<textarea
+  placeholder="🔁 다음엔 어떻게 할까요?"
+  rows="3"
+  style={{ width: '100%', resize: 'vertical' }}
+  value={input.reflection}
+  onChange={(e) => setInput({ ...input, reflection: e.target.value })}
+/><br/>
       <input type='date' value={input.date} onChange={(e) => setInput({...input, date: e.target.value})} /><br/>
       <button onClick={addLog}>기록하기</button>
 
